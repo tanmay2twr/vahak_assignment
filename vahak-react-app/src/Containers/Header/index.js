@@ -1,14 +1,33 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
 
 function Header(props) {
   return (
     <div>
-      <Navbar bg="dark" variant="dark" style={{ height: "100px" }}>
-        <h1 className="text-white">{props.text}</h1>
+      <Navbar className="navbar navbar-light bg-light">
+        <div className="container-fluid" style={{ padding: "1rem 7%" }}>
+          <a className="navbar-brand" href="#">
+            <img
+              src="/docs/5.1/assets/brand/bootstrap-logo.svg"
+              alt=""
+              width="30"
+              height="24"
+              className="d-inline-block align-text-top"
+            />
+            Vahak
+          </a>
+        </div>
+      </Navbar>
+      <Navbar className="navbar navbar-light bg-dark ">
+        <div className="container-fluid" style={{ justifyContent: "center" }}>
+          <p
+            className="navbar-brand mb-0 h1 text-white mt-5 mb-5"
+            style={{ fontSize: "45px" }}
+          >
+            {props.text}
+          </p>
+        </div>
       </Navbar>
     </div>
   );
