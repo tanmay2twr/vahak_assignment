@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import "./style.css";
 import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-function BidAmount(props) {
+
+function BidDetails(props) {
   const [next, setNext] = useState(0);
 
   const handleSubmit = (e) => {
@@ -114,4 +114,4 @@ function BidAmount(props) {
   );
 }
 
-export default BidAmount;
+export default BidDetails;

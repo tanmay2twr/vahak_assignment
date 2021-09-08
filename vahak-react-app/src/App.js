@@ -3,7 +3,7 @@ import react, { useState } from "react";
 import Header from "./Containers/Header/index";
 import JourneyDetails from "./Containers/JourneyDetails/index";
 import ViewJourneyDetails from "./Containers/ViewJourneyDetails/index";
-import BidAmount from "./Containers/BidAmount/index";
+import BidDetails from "./Containers/BidDetails/index";
 
 function App() {
   const [screenNum, setScreenNum] = useState(1);
@@ -66,7 +66,7 @@ function App() {
             changeScreen={changeScreen}
             num={screenNum}
           />
-          <BidAmount
+          <BidDetails
             changeBidAmount={changeBidAmount}
             bidAmount={bidAmount}
             updateDetails={updateDetails}
