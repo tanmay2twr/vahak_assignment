@@ -8,14 +8,14 @@ function ViewBidDetails(props) {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Card
           className="card border-0 border-bottom p-4"
-          style={{ width: "500px" }}
+          style={{ width: "350px", border: "0" }}
         >
           <Card.Body className="">
             <Card.Subtitle className="mb-2 text-muted">
-              <div className="col-6">JOURNEY DETAILS </div>
+              <div className="col-6" style={{ fontSize: "15px"}}>BID DETAILS </div>
             </Card.Subtitle>
             <div className="row">
-              <div className="col-6">
+              <div className="col-8">
                 {" "}
                 <Card.Text>
                   {props.bidDetails.mobileNum}
@@ -26,18 +26,18 @@ function ViewBidDetails(props) {
                 </Card.Text>
               </div>
               <div
-                className="col-6 "
+                className="col-4"
                 style={{ position: "absolute", right: "0" }}
               >
                 <span
                   className=" border-0"
-                  style={{ fontSize: "30px", position: "absolute", right: "0" }}
+                  style={{ fontSize: "25px", position: "absolute", right: "0" }}
                 >
                   <b>₹</b>{" "}
-                  <span style={{ fontSize: "30px" }}>
+                  <span style={{ fontSize: "25px" }}>
                     {props.bidDetails.bidAmount}
-                  </span>
-                  <span style={{ fontSize: "20px",}}>Fixed Price</span>
+                  </span><br/>
+                  <span style={{ fontSize: "15px",}}>Fixed Price</span>
                 </span>
               </div>
             </div>

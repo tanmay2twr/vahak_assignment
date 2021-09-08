@@ -13,7 +13,7 @@ function BidDetails(props) {
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <Card className="card border-0 p-4" style={{ width: "500px" }}>
+        <Card className="card border-0 p-4" style={{ width: "300px", border: "0" }}>
           <Card.Body className="">
             <div className="row">
               <div
@@ -25,7 +25,7 @@ function BidDetails(props) {
                 </span>
                 <input
                   type="text"
-                  style={{ fontSize: "50px", width: "200px" }}
+                  style={{ fontSize: "50px", width: "150px" }}
                   className="border-0"
                   name="bidAmount"
                   placeholder="0"
@@ -65,7 +65,7 @@ function BidDetails(props) {
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Card
             className="card border-0 border-top p-4"
-            style={{ width: "500px" }}
+            style={{ width: "350px", border: "0" }}
           >
             <Card.Body className="">
               <Card.Text style={{ display: "flex", justifyContent: "center" }}>

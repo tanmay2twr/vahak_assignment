@@ -40,9 +40,9 @@ function BidDetailsForm(props) {
               className="container"
               style={{ display: "flex", justifyContent: "center" }}
             >
-              <Form className="p-4" style={{ width: "500px" }}>
+              <Form className="p-4" >
                 <div class="col-12">
-                  <Card style={{ width: "450px", border: "0" }}>
+                  <Card style={{ width: "300px", border: "0" }}>
                     <BootstrapForm.Group className="col-md-12  mt-3">
                       <BootstrapForm.Label>Mobile Number *</BootstrapForm.Label>
                       <Field
@@ -70,13 +70,13 @@ function BidDetailsForm(props) {
                         controlId="formGridDestination"
                       >
                         <div className="row">
-                          <div className="col-5">
+                          <div className="col-6">
                             <BootstrapForm.Check
-                              name="terms"
-                              label="Get updates on"
+                              name="terms" style={{ fontSize: "15px" }}
+                              label="Get update on"
                             />
                           </div>
-                          <div className="col-7">
+                          <div className="col-6">
                             <span style={{ color: "green" }}>
                               <WhatsAppIcon className="fa-whatsapp fa-2x" />{" "}
                               Whatsapp

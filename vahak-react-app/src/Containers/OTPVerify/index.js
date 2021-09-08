@@ -51,9 +51,9 @@ function OTPVerify(props) {
       className="container"
       style={{ display: "flex", justifyContent: "center" }}
     >
-      <Form className="p-4" style={{ width: "500px" }} onSubmit={handleSubmit}>
+      <Form className="p-4" style={{ width: "350px", border: "0" }} onSubmit={handleSubmit}>
         <div class="col-12">
-          <Card style={{ width: "450px", border: "0" }}>
+          <Card style={{ width: "350px", border: "0" }}>
             <Card.Text>
               We've sent an OTP to your mobile number, Please enter it below to
               submit your bid request {props.bidDetails.mobileNum}{" "}
@@ -71,28 +71,28 @@ function OTPVerify(props) {
                   onChange={handleChange}
                   name="field-1"
                   maxLength="1"
-                  className="border-0 border-bottom m-2 otpInput"
+                  className="border-0 border-bottom me-2 otpInput"
                 />
                 <input
                   type="text"
                   onChange={handleChange}
                   maxLength="1"
                   name="field-2"
-                  className="border-0 border-bottom m-2 otpInput"
+                  className="border-0 border-bottom me-2 otpInput"
                 />
                 <input
                   type="text"
                   name="field-3"
                   maxLength="1"
                   onChange={handleChange}
-                  className="border-0 border-bottom m-2 otpInput"
+                  className="border-0 border-bottom me-2 otpInput"
                 />
                 <input
                   type="text"
                   name="field-4"
                   maxLength="1"
                   onChange={handleChange}
-                  className="border-0 border-bottom m-2 otpInput"
+                  className="border-0 border-bottom me-2 otpInput"
                 />
               </div>
             </Card.Body>
@@ -100,7 +100,7 @@ function OTPVerify(props) {
         </div>
         <Button
           type="submit"
-          className=" btn btn-primary col-12 mt-3"
+          className=" btn btn-primary col-12 mt-3 ms-3"
           variant="primary"
         >
           Verify via OTP

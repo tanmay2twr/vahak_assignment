@@ -23,7 +23,7 @@ function Header(props) {
         <div className="container-fluid" style={{ justifyContent: "center" }}>
           <p
             className="navbar-brand mb-0 h1 text-white mt-5 mb-5"
-            style={{ fontSize: "40px" }}
+            style={{ fontSize: "36px" }}
           >
             {props.text}
           </p>

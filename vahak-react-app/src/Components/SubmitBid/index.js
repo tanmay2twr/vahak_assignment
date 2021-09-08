@@ -9,9 +9,9 @@ function SubmitBid() {
       className="container"
       style={{ display: "flex", justifyContent: "center" }}
     >
-      <Form className="p-4" style={{ width: "500px" }}>
+      <Form className="p-4" style={{ width: "350px" }}>
         <div class="col-12">
-          <Card style={{ width: "450px", border: "0" }}>
+          <Card style={{ width: "350px", border: "0" }}>
             <Card.Text></Card.Text>
             <Card.Body></Card.Body>
           </Card>
