@@ -1,0 +1,17 @@
+
+    .userInput {
+    display:flex;
+    justify-content: center;
+    }
+    .otpInput {
+    height: 60px;
+    width: 80px;
+    text-align: center;
+    background:#eef2f3;
+    outline: none;
+    cursor:auto;
+    }
+    
+    .otpInput:focus{
+    outline:none;
+    }

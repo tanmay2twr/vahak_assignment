@@ -4,6 +4,9 @@ import Header from "./Containers/Header/index";
 import JourneyDetails from "./Containers/JourneyDetails/index";
 import ViewJourneyDetails from "./Containers/ViewJourneyDetails/index";
 import BidDetails from "./Containers/BidDetails/index";
+import ViewBidDetails from "./Containers/ViewBidDetails";
+import OTPVerify from "./Containers/OTPVerify";
+import SubmitBid from "./Components/SubmitBid";
 
 function App() {
   const [screenNum, setScreenNum] = useState(1);
@@ -14,15 +17,13 @@ function App() {
     numOfTravellers: 0,
   });
 
-  const [details, setDetails] = useState({
+  const [bidDetails, setBidDetails] = useState({
+    bidAmount: "",
     mobileNum: "",
     name: "",
     remarks: "",
   });
-  const [bidAmount, setBidAmount] = useState(0);
-  const changeBidAmount = (num) => {
-    setBidAmount(num);
-  };
+
   const changeScreen = (num) => {
     setScreenNum(num);
   };
@@ -36,11 +37,11 @@ function App() {
     });
   };
 
-  const updateDetails = (e) => {
+  const updateBidDetails = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
-    setDetails({
-      ...journeyDetails,
+    setBidDetails({
+      ...bidDetails,
       [name]: value,
     });
   };
@@ -54,7 +55,7 @@ function App() {
             changeScreen={changeScreen}
             num={screenNum}
             journeyDetails={journeyDetails}
-            updateJourneyDetails={updateJourneyDetails}
+            setJourneyDetails={setJourneyDetails}
           />
         </>
       )}
@@ -67,16 +68,42 @@ function App() {
             num={screenNum}
           />
           <BidDetails
-            changeBidAmount={changeBidAmount}
-            bidAmount={bidAmount}
-            updateDetails={updateDetails}
-            details={details}
+            setBidDetails={setBidDetails}
+            bidDetails={bidDetails}
             changeScreen={changeScreen}
+            num={screenNum}
+            updateBidDetails={updateBidDetails}
           />
         </>
       )}
-      {screenNum === 3 && <Header text="Veriy OTP(3/4 step)" />}
-      {screenNum === 4 && <Header text="Summary & Submit Bid(4/4 step)" />}
+      {screenNum === 3 && (
+        <>
+          <Header text="Veriy OTP(3/4 step)" />
+          <ViewJourneyDetails
+            journeyDetails={journeyDetails}
+            changeScreen={changeScreen}
+            num={screenNum}
+          />
+          <ViewBidDetails bidDetails={bidDetails} />
+          <OTPVerify
+            changeScreen={changeScreen}
+            num={screenNum}
+            bidDetails={bidDetails}
+          />
+        </>
+      )}
+      {screenNum === 4 && (
+        <>
+          <Header text="Summary & Submit Bid(4/4 step)" />{" "}
+          <ViewJourneyDetails
+            journeyDetails={journeyDetails}
+            changeScreen={changeScreen}
+            num={screenNum}
+          />
+          <ViewBidDetails bidDetails={bidDetails} />
+          <SubmitBid/>
+        </>
+      )}
     </div>
   );
 }

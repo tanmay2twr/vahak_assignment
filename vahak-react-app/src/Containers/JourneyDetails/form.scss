@@ -1,0 +1,16 @@
+$primary-color: #1d3557;
+$error-color: #e63946;
+$text-color: #293241;
+$color-white: #fff;
+$shadow-color: #dedee6;
+$border-radius: 4px;
+
+.input-error {
+    border-color: $error-color;
+  }
+
+.error {
+    color: $error-color;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
