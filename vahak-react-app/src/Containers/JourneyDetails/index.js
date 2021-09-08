@@ -13,8 +13,11 @@ function JourneyDetails(props) {
     props.changeScreen(num);
   };
   return (
-    <div className="container">
-      <Form style={{ padding: "9rem 35%" }} onSubmit={handleSubmit}>
+    <div
+      className="container"
+      style={{ display: "flex", justifyContent: "center" }}
+    >
+      <Form className="p-4" style={{ width: "500px" }} onSubmit={handleSubmit}>
         <Row className="mb-3">
           <Form.Group className="col-md-6" controlId="formGridLocation">
             <Form.Label>Source Location *</Form.Label>
@@ -47,7 +50,7 @@ function JourneyDetails(props) {
             name="carType"
           >
             <option>None</option>
-            <option value="HatchBonSubmit={handleSubmit}ack">HatchBack</option>
+            <option value="Hatchback">HatchBack</option>
             <option value="Sedan">Sedan</option>
             <option value="SUV">SUV</option>
           </Form.Select>
