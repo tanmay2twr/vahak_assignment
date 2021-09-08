@@ -1,12 +1,13 @@
 import "./App.css";
 import react, { useState } from "react";
 import Header from "./Containers/Header/index";
-import JourneyDetails from "./Containers/JourneyDetails/index";
+import JourneyDetails from "./Containers/JourneyDetails/JourneyDetails";
 import ViewJourneyDetails from "./Containers/ViewJourneyDetails/index";
 import BidDetails from "./Containers/BidDetails/index";
 import ViewBidDetails from "./Containers/ViewBidDetails";
 import OTPVerify from "./Containers/OTPVerify";
 import SubmitBid from "./Components/SubmitBid";
+import * as Yup from "yup";
 
 function App() {
   const [screenNum, setScreenNum] = useState(1);
@@ -28,15 +29,6 @@ function App() {
     setScreenNum(num);
   };
 
-  const updateJourneyDetails = (e) => {
-    const { name, value } = e.target;
-    console.log(name, value);
-    setJourneyDetails({
-      ...journeyDetails,
-      [name]: value,
-    });
-  };
-
   const updateBidDetails = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
@@ -45,6 +37,16 @@ function App() {
       [name]: value,
     });
   };
+
+  const validate = Yup.object({
+    sourceLocation: Yup.string()
+      .max(15, "Must be 15 characters or less")
+      .required("Required"),
+    destination: Yup.string()
+      .max(20, "Must be 20 characters or less")
+      .required("Required"),
+    carType: Yup.string().required("Required"),
+  });
 
   return (
     <div>
@@ -101,7 +103,7 @@ function App() {
             num={screenNum}
           />
           <ViewBidDetails bidDetails={bidDetails} />
-          <SubmitBid/>
+          <SubmitBid />
         </>
       )}
     </div>
